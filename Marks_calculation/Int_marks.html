@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal Marks</title>
+    <style>
+        nav{
+            position: relative;
+            background-image: url(https://media.istockphoto.com/photos/abstract-pastel-paper-background-picture-id506216056?b=1&k=20&m=506216056&s=612x612&w=0&h=sigrUnYK_oS9Uq4MdgwS7rH_fEyL4-JRuW59pIPCQfM=);
+            /* background-color: rgb(255, 196, 0); */
+            height: 100px;
+            
+            margin: -10px;
+        }
+        nav img{
+            position: relative;
+            top: 20px;
+            height: 50px;
+        }
+        .hd{  
+            margin: -15px;
+            padding: 10px;
+            font-size: 25px;
+            text-align: center;
+
+        }
+        .style1 {
+            background-color: #ffccfb;
+            text-align: center;
+            
+            justify-content: center;
+            padding: 100px 100px 100px 100px;
+            height: 435px;
+            margin: -15px;
+        }
+
+        footer {
+            position: relative;
+            text-align: center;
+            height: 100px;
+            background-color: rgb(124, 228, 228);
+            margin: -15px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav >
+        <div class="hd">
+          <img src="https://rinex.ai/assets/images/RInex%20%20black.png" alt="">
+            
+        </div>
+    </nav>    
+    <div class="style1">
+        <h1 style="font-family: 'Lobster', cursive;">Internal marks</h1><br>
+        <form action="">
+            <label for="IA">IA1</label>
+            <input onblur="Totalmks()" type="text" name="" id="IA1" placeholder="enter your marks">
+            <br><br>
+            <label for="IA">IA2</label>
+            <input onblur="Totalmks()" type="text" id="IA2" placeholder="enter your marks">
+            <br><br>
+            <label for="IA">IA3</label>
+            <input onblur="Totalmks()" type="text" name="" id="IA3" placeholder="enter your marks">
+            <br><br>
+            <label for="tot">Total marks: </label>
+            <input type="text" name="" id="tot">
+            <label for="avg">Average Marks: </label>
+            <input type="text" name="" id="avg">
+        </form>
+    </div>
+    <script>
+        function Totalmks() {
+            var arr = [document.getElementById("IA1"), document.getElementById("IA2"), document.getElementById("IA3")];
+            var total = 0;
+            for (var i = 0; i < arr.length; i++) {
+                if (parseInt(arr[i].value)) {
+                    total += parseInt(arr[i].value);
+                }
+                var avg = total / 3;
+            }
+            document.getElementById("tot").value = total;
+            document.getElementById("avg").value = avg;
+        }
+
+    </script>
+    <footer>
+        <p>Copyright ©- All rights are reserved</p>
+    </footer>
+</body>
+
+</html>

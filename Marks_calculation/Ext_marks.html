@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Marks</title>
+    <style>
+        nav{
+            position: relative;
+            background-image: url(https://media.istockphoto.com/photos/abstract-pastel-paper-background-picture-id506216056?b=1&k=20&m=506216056&s=612x612&w=0&h=sigrUnYK_oS9Uq4MdgwS7rH_fEyL4-JRuW59pIPCQfM=);
+            /* background-color: rgb(255, 196, 0); */
+            height: 100px;
+            
+            margin: -10px;
+        }
+        nav img{
+            position: relative;
+            top: 20px;
+            height: 50px;
+        }
+        .hd{  
+            margin: -15px;
+            padding: 10px;
+            font-size: 25px;
+            text-align: center;
+
+        }
+        .style1 {
+            background-color: #ffccfb;
+            text-align: center;
+            
+            justify-content: center;
+            padding: 100px 100px 100px 100px;
+            height: 435px;
+            margin: -15px;
+        }
+
+        footer {
+            position: relative;
+            text-align: center;
+            height: 100px;
+            background-color: rgb(124, 228, 228);
+            margin: -15px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<nav >
+    <div class="hd">
+      <img src="https://rinex.ai/assets/images/RInex%20%20black.png" alt="">
+        
+    </div>
+</nav>    
+<div class="style1">
+    <h1 style="font-family: 'Lobster', cursive;">External marks</h1><br>
+    <form action="">
+        <label for="S1">Subject 1</label>
+        <input onblur="Totalmks()" type="text" name="" id="S1" placeholder="enter your marks">
+        <br><br>
+        <label for="S2">Subject 2</label>
+        <input onblur="Totalmks()" type="text" id="S2" placeholder="enter your marks">
+        <br><br>
+        <label for="S3">Subject 3</label>
+        <input onblur="Totalmks()" type="text" name="" id="S3" placeholder="enter your marks">
+        <br><br>
+        <label for="S4">Subject 4</label>
+        <input onblur="Totalmks()" type="text" name="" id="S4" placeholder="enter your marks">
+        <br><br>
+        <label for="S5">Subject 5</label>
+        <input onblur="Totalmks()" type="text" name="" id="S5" placeholder="enter your marks">
+        <br><br>
+        <label for="S6">Subject 5</label>
+        <input onblur="Totalmks()" type="text" name="" id="S6" placeholder="enter your marks">
+        <br><br>
+        <label for="tot">Total marks: </label>
+        <input type="text" name="" id="tot">
+        <label for="avg">Percentage: </label>
+        <input type="text" name="" id="avg">
+    </form>
+</div>
+<script>
+    function Totalmks() {
+        var arr = [document.getElementById("S1"), document.getElementById("S2"), document.getElementById("S3"), document.getElementById("S4"),document.getElementById("S5"), document.getElementById("S6")];
+        var total = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (parseInt(arr[i].value)) {
+                total += parseInt(arr[i].value);
+            }
+            var Percentage = (total / 600)*100;
+        }
+        document.getElementById("tot").value = total;
+        document.getElementById("avg").value = Percentage;
+    }
+
+</script>
+<footer>
+    <p>Copyright ©- All rights are reserved</p>
+</footer>
+    
+</body>
+</html>
